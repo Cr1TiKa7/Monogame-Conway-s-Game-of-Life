@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GameOfLive.Models
+namespace GameOfLive.Bacteria
 {
     public class Bacteria
     {

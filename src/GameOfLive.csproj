@@ -41,10 +41,14 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Bacteria\BacteriaManager.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="Models\Bacteria.cs" />
+    <Compile Include="Bacteria\Bacteria.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UiElements\BaseGame.cs" />
+    <Compile Include="UiElements\IUiElement.cs" />
+    <Compile Include="UiElements\SideMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
