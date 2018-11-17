@@ -80,18 +80,18 @@ namespace GameOfLive.UiElements
                 if (bacteria != null)
                     bacteria.IsAlive = !bacteria.IsAlive;
             }
+        }
 
-            if (keyboardState.IsKeyDown(Keys.Space))
-            {
-                Thread.Sleep(200);
-                IsRunning = !IsRunning;
-                if (IsRunning)
-                {
-                    _bacterias = BacteriaManager.GenerateBacterias(CellCountX, CellCountY);
-                }
-                else
-                    _bacterias.Clear();
-            }
+        public void Start()
+        {
+            IsRunning = true;
+            _bacterias = BacteriaManager.GenerateBacterias(CellCountX, CellCountY);
+        }
+
+        public void Stop()
+        {
+            IsRunning = false;
+            _bacterias.Clear();
         }
 
         public void Draw(GameTime gameTime)

@@ -7,7 +7,7 @@ namespace GameOfLive.Bacteria
     public class BacteriaManager
     {
         private readonly Random _Randomizer = new Random();
-        private readonly int _maxNumber = 20;
+        private readonly int _maxNumber = 2;
 
         public double IsAliveChance;
 
