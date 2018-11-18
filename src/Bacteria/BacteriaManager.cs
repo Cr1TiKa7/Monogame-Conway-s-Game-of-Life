@@ -7,8 +7,12 @@ namespace GameOfLive.Bacteria
     public class BacteriaManager
     {
         private readonly Random _Randomizer = new Random();
-        private readonly int _maxNumber = 2;
+        private int _maxNumber = 2;
+        public int MaxNumber{ get { return _maxNumber; } } 
 
+
+        private int _generation = 0;
+        public int Generation => _generation;
         public double IsAliveChance;
 
         public BacteriaManager()
@@ -22,6 +26,14 @@ namespace GameOfLive.Bacteria
             IsAliveChance = 1.0 / _maxNumber * 100;
         }
 
+        public void SetBirthRate(int maxNumber)
+        {
+            if (maxNumber > 0)
+            {
+                _maxNumber = maxNumber;
+                IsAliveChance = 1.0 / _maxNumber * 100;
+            }
+        }
 
         /// <summary>
         /// Generates a list of bacterias. Amounts depends on the width and height parameter.
@@ -31,6 +43,7 @@ namespace GameOfLive.Bacteria
         /// <returns>A list of bacetrias</returns>
         public List<Bacteria> GenerateBacterias(int width, int height)
         {
+            _generation = 0;
             var ret = new List<Bacteria>();
             for (int y = 0; y < height; y++)
             {
@@ -56,6 +69,7 @@ namespace GameOfLive.Bacteria
         /// <param name="bacterias">List of bacterias you want to generate the new generation for</param>
         public void GenerateNextGeneration(List<Bacteria> bacterias)
         {
+            _generation++;
             bacterias.ForEach(x => x.WasAlive = x.IsAlive);
 
             foreach (var bacteria in bacterias)
@@ -80,7 +94,7 @@ namespace GameOfLive.Bacteria
 
         private bool GenerateBacteriaAliveStatus()
         {
-            int aliveStatusIndex = _Randomizer.Next(0, _maxNumber);
+            int aliveStatusIndex = _Randomizer.Next(1, _maxNumber + 1);
             return aliveStatusIndex == 1;
         }
 

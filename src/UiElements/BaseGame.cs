@@ -23,13 +23,13 @@ namespace GameOfLive.UiElements
 
         //Cell informations
         public int CellSize { get; } = 16;
-        public int CellCountX { get; } = 50;
-        public int CellCountY { get; } = 50;
+        public int CellCountX { get; set; } = 50;
+        public int CellCountY { get; set; } = 50;
 
         /// <summary>
         /// Update rate in milliseconds
         /// </summary>
-        public int UpdateRate { get; } = 100;
+        public int UpdateRate { get; set; } = 100;
 
         private double _updateRateTimer;
         public bool IsRunning;
@@ -91,7 +91,7 @@ namespace GameOfLive.UiElements
         public void Stop()
         {
             IsRunning = false;
-            _bacterias.Clear();
+            //_bacterias.Clear();
         }
 
         public void Draw(GameTime gameTime)
