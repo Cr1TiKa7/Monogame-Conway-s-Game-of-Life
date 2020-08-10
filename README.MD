@@ -2,7 +2,7 @@
 
 This is a simple written 'Convway's Game Of Life' example for monogame (C#).
 
-![gif](https://media.giphy.com/media/hTDM9dcnA0g6TdsEOn/giphy.gif)
+![gif](http://cr1tika7.com/assets/img/projects/conways.gif)
 
 The rules are simple:
 - Any live cell with fewer than two live neighbors dies, as if by underpopulation.
